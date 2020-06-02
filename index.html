@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>취향저격 OTT 서비스 찾기!</title>
+</head>
+<body>
+	<style>
+  	body {
+    	background-color: #E0FFFF;
+    	text-align: center;
+  	}
+	</style>
+	<form method="post" action="second.html">
+		<h2>영화, 방송프로그램보다 애니메이션을 좋아하는가</h2>
+		<input type="radio" name="choice1" value="yes"
+		checked="checked" /> 네
+		<input type="radio" name="choice1" value="no" /> 아니오
+	<br />
+		<h2>지상파 방송보다 tvN, JTBC 방송을 주로 보는가?</h2>
+		<input type="radio" name="choice2" value="yes"
+		checked="checked" /> 네
+		<input type="radio" name="choice2" value="no" /> 아니오
+	<br />
+		<h2>한국 방송 컨텐츠 보다 해외 방송 컨텐츠를 선호하는가?</h2>
+		<input type="radio" name="choice3" value="yes"
+		checked="checked" /> 네
+		<input type="radio" name="choice3" value="no" /> 아니오
+	<br />
+		<h2>여러 사람과 계정을 공유할 예정인가?</h2>
+		<input type="radio" name="choice4" value="yes"
+		checked="checked" /> 네
+		<input type="radio" name="choice4" value="no" /> 아니오
+	<br />
+		<h2>실시간 tv 스트리밍 서비스를 이용할 예정인가?</h2>
+		<input type="radio" name="choice5" value="yes"
+		checked="checked" /> 네
+		<input type="radio" name="choice5" value="no" /> 아니오
+	<br />
+		<h2>핸드폰 어플리케이션과 PC만 이용해서 컨텐츠를 이용할 예정인가?</h2>
+		<input type="radio" name="choice6" value="yes"
+		checked="checked" /> 네
+		<input type="radio" name="choice6" value="no" /> 아니오
+	<p><input type="submit" value="제출"></p>
+	</form>
+	<script>
+
+function form_submit() {
+
+document.id.action="second.html";
+
+document.id.submit();
+
+}
+
+</script>
+</body>
+</html>
