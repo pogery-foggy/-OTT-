@@ -1,13 +1,14 @@
 #first {
       background-color: #E0FFFF;
       text-align: center;
+
     }
 #second {
   	background-color: #FFC0CB;
     text-align: center;
   	}
 #all { 
-  	height: 675px;
+  	height: 800px;
   	width: 750px;
   	background-color: #FFF0F5;
    	margin: 10px auto 10px auto;
