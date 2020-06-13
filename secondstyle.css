@@ -1,0 +1,67 @@
+body {
+  	background-color: #FFC0CB;
+    text-align: center;
+  	}
+#all { 
+  	height: 675px;
+  	width: 750px;
+  	background-color: #FFF0F5;
+   	margin: 10px auto 10px auto;
+  	}
+h2, p {
+  		line-height: 1.2em;
+   		text-align: center;
+ 	}
+table{
+  width: 90%;
+  margin: 10px auto 10px auto;
+  border: 1px solid #444444;
+  border-collapse: collapse;
+  }
+body th, td{
+    border: 1px solid #444444;
+    padding: 10px;
+    text-align: center;
+    }
+
+#watcha th{
+      background-color: #9F84D9;
+    }
+#watcha td{
+      background-color: #CFBFFB;
+    }
+
+#laftel th{
+      background-color: #DAA0F2;
+    }
+#laftel td{
+      background-color: #E4C2F2;
+    }
+
+#netflix th{
+      background-color: #E57373;
+    }
+#netflix td{
+      background-color: #EF9A9A;
+    }
+
+#seezon th{
+      background-color: #D984A3;
+    }
+#seezon td{
+      background-color: #F2C9E0;
+    }
+
+#tving th{
+      background-color: #DD868C;
+    }
+#tving td{
+      background-color: #ECBEC3;
+    }
+
+#wave th{
+      background-color: #77A2DC;
+    }
+#wave td{
+      background-color: #99C0EC;
+    }

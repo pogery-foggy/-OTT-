@@ -10,7 +10,7 @@
     	text-align: center;
   	}
 	</style>
-	<form method="post" action="https://pogery-foggy.github.io/-OTT-/second.html">
+	<form id = "choice" action="second.html" "method="post">
 		<h2>영화, 방송프로그램보다 애니메이션을 좋아하는가</h2>
 		<input type="radio" name="choice1" value="yes"/> 네
 		<input type="radio" name="choice1" value="no" /> 아니오
@@ -36,10 +36,15 @@
 		<input type="radio" name="choice6" value="no" /> 아니오
 	<p><input type="submit" value="제출"></p>
 	</form>
-	<script>
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript">
 
 function form_submit() {
 
+alert("hello");
 document.id.action="https://pogery-foggy.github.io/-OTT-/second.html";
 
 document.id.submit();
