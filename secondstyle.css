@@ -1,4 +1,8 @@
-body {
+#first {
+      background-color: #E0FFFF;
+      text-align: center;
+    }
+#second {
   	background-color: #FFC0CB;
     text-align: center;
   	}

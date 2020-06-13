@@ -1,56 +1,144 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" sype="text/css" href = "secondstyle.css">
 	<title>취향저격 OTT 서비스 찾기!</title>
 </head>
-<body>
-	<style>
-  	body {
-    	background-color: #E0FFFF;
-    	text-align: center;
-  	}
-	</style>
-	<form id = "choice" action="second.html" "method="post">
-		<h2>영화, 방송프로그램보다 애니메이션을 좋아하는가</h2>
-		<input type="radio" name="choice1" value="yes"/> 네
-		<input type="radio" name="choice1" value="no" /> 아니오
+	<body id = "first">
+	<div id = "question">
+	<!--<form id =	 "result" action="second.jsp" method="post">-->
+		<h2>지상파 방송(SBS, MBC, KBS)의 채널과<br /> 케이블 방송(tvN, JTBC, TV조선 등) 중 어떤 것을 더 선호합니까?</h2>
+		<input type="radio" name="choice1" value="jisang"/> 지상파
+		<input type="radio" name="choice1" value="cable" /> 케이블
 	<br />
-		<h2>지상파 방송보다 tvN, JTBC 방송을 주로 보는가?</h2>
-		<input type="radio" name="choice2" value="yes"/> 네
-		<input type="radio" name="choice2" value="no" /> 아니오
+		<h2>아래 세 항목 중 가장 좋아하는 것은 무엇입니까?</h2>
+		<input type="radio" name="choice2" value="movie"/> 영화
+		<input type="radio" name="choice2" value="drama" /> 드라마
+		<input type="radio" name="choice2" value="anima" /> 애니메이션
 	<br />
-		<h2>한국 방송 컨텐츠 보다 해외 방송 컨텐츠를 선호하는가?</h2>
-		<input type="radio" name="choice3" value="yes"/> 네
-		<input type="radio" name="choice3" value="no" /> 아니오
+		<h2>여러 사람과 계정을 공유할 예정입니까?</h2>
+		<input type="radio" name="choice3" value="notsolo"/> 네
+		<input type="radio" name="choice3" value="solo" /> 아니오
 	<br />
-		<h2>여러 사람과 계정을 공유할 예정인가?</h2>
-		<input type="radio" name="choice4" value="yes"/> 네
-		<input type="radio" name="choice4" value="no" /> 아니오
+		<h2>한국 제작 콘텐츠와 해외 제작 콘텐츠 중 어느 것을 선호합니까?</h2>
+		<input type="radio" name="choice4" value="korea"/> 한국
+		<input type="radio" name="choice4" value="notkorea" /> 해외
 	<br />
-		<h2>실시간 tv 스트리밍 서비스를 이용할 예정인가?</h2>
-		<input type="radio" name="choice5" value="yes"/> 네
-		<input type="radio" name="choice5" value="no" /> 아니오
+		<h2>실시간 TV 스트리밍 서비스를 이용할 예정입니까?</h2>
+		<input type="radio" name="choice5" value="stri"/> 네
+		<input type="radio" name="choice5" value="notstri" /> 아니오
 	<br />
-		<h2>핸드폰 어플리케이션과 PC만 이용해서 컨텐츠를 이용할 예정인가?</h2>
-		<input type="radio" name="choice6" value="yes"/> 네
-		<input type="radio" name="choice6" value="no" /> 아니오
-	<p><input type="submit" value="제출"></p>
-	</form>
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+		<h2>인터넷 연결이 불가능한 장소에서 주로 콘텐츠를 즐길 예정입니까?</h2>
+		<input type="radio" name="choice6" value="nowifi"/> 네
+		<input type="radio" name="choice6" value="yeswifi" /> 아니오
+	<br />
+		<h2>스포츠 채널 및 홈쇼핑 중계를 이용할 예정입니까?</h2>
+		<input type="radio" name="choice7" value="sport"/> 네
+		<input type="radio" name="choice7" value="nosport" /> 아니오
+	<br />
+		<h2>생각하고 있는 월정액 금액을 선택하세요</h2>
+		<select name="choice8" size="1">
+			<option value="five">5000~6000원</option>
+			<option value="sevon">7000~10000원</option>
+			<option value="ten">10000원 이상</option>
+		</select>
+	<br />
+		<h2>오로지 애니메이션만 시청할 예정입니까?</h2>
+		<input type="radio" name="choice9" value="duck"/> 네
+		<input type="radio" name="choice9" value="noduck" /> 아니오
+	<br />
+		<h2>다양한 기기를 이용해 콘텐츠를 즐길 예정입니까?</h2>
+		<input type="radio" name="choice10" value="notonly"/> 네
+		<input type="radio" name="choice10" value="onlyone" />아니오
+	<!-- </form> --><br />
+	<input type="button" value="제출" onclick="calcul()">
+	</div>
+	<!-- 여기까지가 first -->
+	<div Id = "newpage"></div>
 	<script type="text/javascript">
 
-function form_submit() {
+		var netflix=0,wave=0,tving=0,laftel=0,seezon=0,watcha=0;
+		function calcul(){
+		if(document.getElementsByName("choice1").value == "jisang"){
+			netflix+=3; watcha+=3;wave+=5;seezon+=5;tving+=3;laftel+=1;
+		}
+		else{netflix+=5; watcha+=3;wave+=3;seezon+=3;tving+=5;laftel+=1;}
+//1
 
-alert("hello");
-document.id.action="https://pogery-foggy.github.io/-OTT-/second.html";
+		if(document.getElementsByName("choice2").value == "movie"){
+			netflix+=5; watcha+=5;wave+=3;seezon+=3;tving+=3;laftel+=1;}
+		else if(document.getElementsByName("choice2").value == "drama")
+			{netflix+=5; watcha+=3;wave+=5;seezon+=3;tving+=3;laftel+=1;}
+		else {netflix+=3; watcha+=5;wave+=3;seezon+=3;tving+=1;laftel+=5;}
+//2
 
-document.id.submit();
+		if(document.getElementsByName("choice3").value == "korea"){
+			netflix+=3; watcha+=3;wave+=5;seezon+=5;tving+=3;laftel+=1;
+		}
+		else{netflix+=5; watcha+=5;wave+=3;seezon+=3;tving+=3;laftel+=1;}
+//3
 
-}
+		if(document.getElementsByName("choice4").value == "notsolo"){
+			netflix+=5; watcha+=5;wave+=5;seezon+=1;tving+=1;laftel+=1;
+		}
+		else{netflix+=3; watcha+=3;wave+=3;seezon+=5;tving+=5;laftel+=1;}
+//4
 
-</script>
-</body>
+		if(document.getElementsByName("choice5").value == "stri"){
+			netflix+=1; watcha+=1;wave+=5;seezon+=5;tving+=5;laftel+=1;
+		}
+		else{netflix+=5; watcha+=5;wave+=3;seezon+=3;tving+=5;laftel+=1;}
+//5
+
+		if(document.getElementsByName("choice6").value == "nowifi"){
+			netflix+=5; watcha+=5;wave+=3;seezon+=1;tving+=3;laftel+=1;
+		}
+		else{netflix+=3; watcha+=3;wave+=5;seezon+=5;tving+=5;laftel+=1;}
+//6
+
+		if(document.getElementsByName("choice7").value == "sport"){
+			netflix+=1; watcha+=1;wave+=5;seezon+=5;tving+=3;laftel+=1;
+		}
+		else{netflix+=5; watcha+=5;wave+=3;seezon+=3;tving+=5;laftel+=1;}
+//7
+
+		if(document.getElementsByName("choice8").value == "five"){
+			netflix+=1; watcha+=1;wave+=1;seezon+=5;tving+=1;laftel+=1;}
+		else if(document.getElementsByName("choice8").value == "sevon")
+			{netflix+=5; watcha+=5;wave+=5;seezon+=5;tving+=1;laftel+=5;}
+		else {netflix+=5; watcha+=5;wave+=5;seezon+=5;tving+=5;laftel+=5;}
+//8
+
+		if(document.getElementsByName("choice9").value == "duck"){
+			netflix+=1; watcha+=1;wave+=5;seezon+=5;tving+=3;laftel+=100;
+		}
+		else{netflix+=3; watcha+=3;wave+=3;seezon+=3;tving+=3;laftel+=1;}
+//9
+
+		if(document.getElementsByName("choice10").value == "notonly"){
+			netflix+=5; watcha+=5;wave+=3;seezon+=1;tving+=5;laftel+=1;
+		}
+		else{netflix+=3; watcha+=3;wave+=3;seezon+=5;tving+=3;laftel+=1;}
+//10
+		var arr= new Array;
+		arr.push(netflix);
+		arr.push(watcha);
+		arr.push(wave);
+		arr.push(seezon);
+		arr.push(tving);
+		arr.push(laftel);
+		var delit = document.getElementById("question");
+        delit.parentNode.removeChild(delit);
+   //여기까지가 first
+        document.getElementById("first").style.backgroundColor = "#FFC0CB"
+        var waveStr = "<table id=\"wave\"><tr><th>Basic</th><th>Standard</th><th>Premium</th></tr><tr><td>월 7900원</td><td>월 10900원</td><td>월 13900원</td></tr><tr><td>동시접속 가능인원:1<br>HD화질 지원</td><td>동시접속 가능인원:2<br>FHD화질 지원</td><td>동시접속 가능인원:4<br>최상위 화질 지원</td></tr></table>";
+      var tvingStr = "<table id = \"tving\"><tr><th>티빙 무제한</th><th>티빙 무제한 플레스</th><th>무비 프리미엄</th></tr><tr><td>월 11900원<br>CJ one회원: 월 5900원</td><td>월 15900원<br>CJ one회원: 월 9900원</td><td>월 9900원</td></tr><tr><td colspan=\"2\">실시간 방송 및 VOD, 월정액 무제한 영화관 내 lite 영화 500여편</td><td>월정액 영화관 내의 모든 영화</td></tr><tr><td>고화질(720p)<br>PC, 스마트폰, 태블릿, 크롬캐스트</td><td>초고화질(1080p)<br>PC, 스마트폰, 태블릿, 크롬캐스트, 스마트TV, 안드로이드TV</td><td>초고화질(1080p)</td></tr></table>";
+      var seezonStr = "<table id = \"seezon\"><tr><th>SEEZEN Plain</th><th>SEEZEN Mix</th><th>SEEZEN Plain Plus</th><th>SEEZEN Mix Plus</th></tr><tr><td>월 5500원</td><td>월 9900원</td><td>월 8800원</td><td>월 13200원</td></tr><tr><td colspan=\"2\">130여개 실시간 채널<br>20만여편 VOD 제공</td><td colspan=\"2\">140여개 실시간 채널<br>20만여편 VOD 제공</td></tr><tr><td></td><td>VOD용 별도 코인(코코) 제공</td><td>지니뮤직 이용 가능</td><td>VOD용 별도 코인(코코) 제공<br>지니뮤직 이용 가능</td></tr></table>";
+      var netflixStr = "<table id=\"netflix\"><tr><th>Basic</th><th>Standard</th><th>Premium</th></tr><tr><td>월 9500원</td><td>월 12000원</td><td>월 14500원</td></tr><tr><td>동시접속 가능인원:1</td><td>동시접속 가능인원:2<br>HD화질 지원</td><td>동시접속 가능인원:4<br>HD, HD화질 지원</td></tr></table>";
+      var laftelStr = "<table id=\"laftel\"><tr><th>애니 멤버십</th><th>애니 멤버십 3개월권</th><th>10000포인트</th></tr><tr><td>월 9900원</td><td>월 29700원</td><td>10000원</td></tr><tr><td colspan=\"2\">스트리밍 제공<br>등급에 따른 다운로드 제한</td><td>100포인트 당 100원으로 애니메이션 소장, 대여 가능</td></tr></table>";
+      var watchaStr = " <table id=\"watcha\"><tr><th>Basic</th><th>Premium</th></tr><tr><td>월 7900원</td><td>월 12900원</td></tr><tr><td>동시접속 가능인원:1<br>최대화질: 2K</td><td>동시접속 가능인원:4<br>최대화질:4K</td></tr></table>";
+      document.getElementById("newpage").innerHTML = "<div id=\"all\"> <h1> 당신에게 추천하는 <br />OTT는 바로!</h1>" + "<h2>1위</h2>"+waveStr+"<h2>2위</h2>"+watchaStr+"</div>";
+		}
+	</script>
+	</body>
 </html>
